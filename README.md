@@ -10,7 +10,6 @@ make fclean
 
 ## Ressources
 ***
-Ressources utilisées dans ce projet:
 * [Docker](https://docs.docker.com/reference/)
 * [NGINX](https://nginx.org/en/docs/)
 * [WordPress](https://fr.wordpress.org/support/): Version 6.1.1
