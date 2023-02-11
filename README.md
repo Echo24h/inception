@@ -1,3 +1,11 @@
+Utilisation:
+```
+make
+make re
+make clean
+make fclean
+```
+
 ![alt text](https://github.com/gborneGit/inception/blob/main/schema_inception.png)
 
 ## Ressources
