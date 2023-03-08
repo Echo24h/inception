@@ -10,7 +10,7 @@ make fclean
 ```
 
 <p align="center">
-<img height="300" src="https://github.com/gborneGit/inception/blob/main/schema_inception.png" alt="Schema du réseau Inception">
+<img height="500" src="https://github.com/gborneGit/inception/blob/main/schema_inception.png" alt="Schema du réseau Inception">
 </p>
 
 ## Ressources
