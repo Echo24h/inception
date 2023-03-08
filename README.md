@@ -1,5 +1,3 @@
-<p align="center">
-<img height="500" src="https://github.com/gborneGit/inception/blob/main/schema_inception.png" alt="Schema du réseau Inception">
 ## Utilisation:
 ```Makefile
 # Compile le projet
@@ -10,6 +8,9 @@ make re
 make clean
 make fclean
 ```
+
+<p align="center">
+<img height="500" src="https://github.com/gborneGit/inception/blob/main/schema_inception.png" alt="Schema du réseau Inception">
 </p>
 
 ## Ressources
