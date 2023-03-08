@@ -1,12 +1,17 @@
-Utilisation:
-```
+## Utilisation:
+```Makefile
+# Compile le projet
 make
+# Equivaux: fclean + make
 make re
+# Nettoie Docker
 make clean
 make fclean
 ```
 
-![alt text](https://github.com/gborneGit/inception/blob/main/schema_inception.png)
+<p align="center">
+<img height="300" src="https://github.com/gborneGit/inception/blob/main/schema_inception.png" alt="Schema du réseau Inception">
+</p>
 
 ## Ressources
 ***
