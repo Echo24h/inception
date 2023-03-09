@@ -10,7 +10,7 @@ Ce projet vise à approfondir les connaissances en administration système en ut
 <img height="500" src="https://github.com/gborneGit/inception/blob/main/schema_inception.png" alt="Schema du réseau Inception">
 </p>
 
-Une fois le projet compilé, vous exécutez le schéma de réseau "Inception" en utilisant Docker. Pour plus d'informations sur Docker, vous pouvez consulter la documentation officielle : https://docs.docker.com/reference/.
+Pour plus d'informations sur Docker, vous pouvez consulter la documentation officielle : https://docs.docker.com/reference/.
 
 Le projet utilise également NGINX comme serveur web. Pour plus d'informations sur NGINX, vous pouvez consulter la documentation officielle : https://nginx.org/en/docs/.
 
