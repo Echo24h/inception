@@ -4,7 +4,7 @@ Ce projet vise à approfondir les connaissances en administration système en ut
 
 * `make`: Créer le projet
 
-* 'make fclean': Supprime tous les fichiers générés lors de la compilation ainsi que les images Docker et les conteneurs
+* `make fclean`: Supprime tous les fichiers générés lors de la compilation ainsi que les images Docker et les conteneurs
 
 <p align="center">
 <img height="500" src="https://github.com/gborneGit/inception/blob/main/schema_inception.png" alt="Schema du réseau Inception">
