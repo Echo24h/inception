@@ -7,7 +7,7 @@ Ce projet vise à approfondir les connaissances en administration système en ut
 * `make fclean`: Supprime tous les fichiers générés lors de la compilation ainsi que les images Docker et les conteneurs
 
 <p align="center">
-<img height="500" src="https://github.com/gborneGit/inception/blob/main/schema_inception.png" alt="Schema du réseau Inception">
+<img height="500" src="https://github.com/Echo24h/inception/blob/main/schema_inception.png" alt="Schema du réseau Inception">
 </p>
 
 Pour plus d'informations sur Docker, vous pouvez consulter la documentation officielle : https://docs.docker.com/reference/.
