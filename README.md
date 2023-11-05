@@ -1,10 +1,25 @@
 # Virtualisation de plusieurs images Docker dans une machine virtuelle
 
+/!\ L'utilisation de ce projet nécessite de créer un fichier `srcs/.env`, contenant vos variables environnementales suivantes :
+
+```bash
+DOMAIN_NAME= ...
+MYSQL_DATABASE= ...
+MYSQL_ROOT_PASSWORD= ...
+MYSQL_USER= ...
+MYSQL_PASSWORD= ...
+```
+
 Ce projet vise à approfondir les connaissances en administration système en utilisant Docker pour virtualiser plusieurs images dans une machine virtuelle. Les commandes suivantes sont disponibles pour construire, exécuter et nettoyer les images :
 
 * `make`: Créer le projet
+*(le fichier init.sh créé le chemin `/home/$USER/inception` pour les volumes docker `mariadb` et `wordpress`)*
 
 * `make fclean`: Supprime tous les fichiers générés lors de la compilation ainsi que les images Docker et les conteneurs
+
+Pour naviguer dans les dockers :
+
+* `docker logs -it [docker_name]`: Ouvre les fichiers du docker
 
 <p align="center">
 <img height="500" src="https://github.com/Echo24h/inception/blob/main/schema_inception.png" alt="Schema du réseau Inception">

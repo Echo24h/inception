@@ -12,4 +12,5 @@ COPY conf/50-server.cnf	/etc/mysql/mariadb.conf.d/50-server.cnf
 
 # On pré-config la base de donnée
 COPY tools/config.sh /tmp/config.sh
+
 ENTRYPOINT ["sh", "/tmp/config.sh"]

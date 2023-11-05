@@ -1,20 +1,28 @@
 #!/bin/bash
 
-service mysql start
+if [ ! -d "/var/lib/mysql/${MYSQL_DATABASE}" ]
+then
 
-# On créé la database
-mysql -e "CREATE DATABASE IF NOT EXISTS \`$SQL_DATABASE\`;"
+    service mysql start
 
-# On créé l'utilisateur
-mysql -e "CREATE USER IF NOT EXISTS \`$SQL_USER\`@'localhost' IDENTIFIED BY '$SQL_PASSWORD';"
+    # On créé la database
+    mysql -e "CREATE DATABASE IF NOT EXISTS \`$MYSQL_DATABASE\`;"
 
-# On donne les droits à l'utilisateur
-mysql -e "GRANT ALL PRIVILEGES ON \`$SQL_DATABASE\`.* TO \`$SQL_USER\`@'%' IDENTIFIED BY '$SQL_PASSWORD';"
-mysql -e "ALTER USER 'root'@'localhost' IDENTIFIED BY '$SQL_ROOT_PASSWORD';"
+    # On créé l'utilisateur
+    mysql -e "CREATE USER IF NOT EXISTS \`$MYSQL_USER\`@'localhost' IDENTIFIED BY '$MYSQL_PASSWORD';"
 
-# On actualise les privilèges
-mysql -e "FLUSH PRIVILEGES;"
+    # On donne les droits à l'utilisateur
+    mysql -e "GRANT ALL PRIVILEGES ON \`$MYSQL_DATABASE\`.* TO \`$MYSQL_USER\`@'%' IDENTIFIED BY '$MYSQL_PASSWORD';"
+    #mysql -e "ALTER USER 'root'@'localhost' IDENTIFIED BY '$MYSQL_ROOT_PASSWORD';"
 
-# On redémarre et relance MySQL
-mysqladmin -u root -p$SQL_ROOT_PASSWORD shutdown
+    # On actualise les privilèges
+    mysql -e "FLUSH PRIVILEGES;"
+
+    mysql -e "SET PASSWORD FOR root@localhost = PASSWORD('$MYSQL_ROOT_PASSWORD');"
+
+    # On redémarre et relance MySQL
+    mysqladmin -u root -p$MYSQL_ROOT_PASSWORD shutdown
+
+fi
+
 exec mysqld_safe

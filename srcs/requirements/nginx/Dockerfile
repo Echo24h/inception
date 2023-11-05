@@ -1,18 +1,19 @@
 FROM debian:buster
 
 # On met à jour le container
-RUN apt update -y
-RUN apt upgrade -y
+RUN apt update -y; \
+    apt upgrade -y; \
+    # On install vim et nginx
+    apt install nginx -y;
 
-# On install vim et nginx
-RUN apt install nginx -y
-RUN apt install vim -y
-
-# On install les certificats SSL
+# On install le générateur de certificats SSL
 RUN mkdir -p /etc/nginx/ssl
 RUN apt install openssl -y
-RUN openssl req -x509 -nodes -out /etc/nginx/ssl/inception.crt -keyout /etc/nginx/ssl/inception.key -subj "/C=FR/ST=IDF/L=Paris/O=42/OU=42/CN=gborne.42.fr/UID=gborne"
 RUN mkdir -p /var/run/nginx
+
+# Copiez le script de génération de certificat et démarrage nginc dans le conteneur
+COPY tools/config.sh /tmp/config.sh
+RUN chmod +x /tmp/config.sh
 
 # On copy le fichier config de nginx
 COPY conf/nginx.conf /etc/nginx/nginx.conf
@@ -21,5 +22,5 @@ COPY conf/nginx.conf /etc/nginx/nginx.conf
 RUN chmod 755 /var/www/html
 RUN chown -R www-data:www-data /var/www/html
 
-# On lance nginx
-CMD [ "nginx", "-g", "daemon off;" ]
+# On lance la génération SSL puis nginx
+ENTRYPOINT ["sh", "/tmp/config.sh"]
