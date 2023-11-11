@@ -5,8 +5,18 @@ if [ -f .env ]; then
     source .env
 fi
 
+# Vérifier si le dossier user existe déjà
+if [ -d "/home/gborne" ]; then
+    echo "Le dossier /home/gborne existe déjà."
+else
+    # Créer le dossier s'il n'existe pas
+    mkdir -p "/home/gborne"
+    chmod 777 "/home/gborne"
+    echo "Le dossier /home/gborne a été créé avec succès."
+fi
+
 # Chemin du dossier principal
-main_path="/home/$USER/inception"
+main_path="/home/gborne/data"
 
 # Vérifier si le dossier principal existe déjà
 if [ -d "$main_path" ]; then

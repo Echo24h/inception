@@ -6,7 +6,7 @@
 #    By: gborne <gborne@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/06 20:06:48 by gborne            #+#    #+#              #
-#    Updated: 2023/11/05 22:17:32 by gborne           ###   ########.fr        #
+#    Updated: 2023/11/11 17:09:03 by gborne           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ clean:
 	docker-compose -f $(PATH_DOCKER_COMPOSE) down -v --remove-orphans
 
 fclean: clean
-	rm -rf /home/gborne/inception
+	rm -rf /home/gborne/data
 	docker system prune -af
 
 re: fclean all
