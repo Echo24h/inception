@@ -23,4 +23,4 @@ RUN chmod 755 /var/www/html
 RUN chown -R www-data:www-data /var/www/html
 
 # On lance la génération SSL puis nginx
-ENTRYPOINT ["sh", "/tmp/config.sh"]
+CMD ["sh", "/tmp/config.sh"]

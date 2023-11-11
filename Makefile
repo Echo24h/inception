@@ -6,7 +6,7 @@
 #    By: gborne <gborne@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/06 20:06:48 by gborne            #+#    #+#              #
-#    Updated: 2023/11/11 17:09:03 by gborne           ###   ########.fr        #
+#    Updated: 2023/11/11 17:51:31 by gborne           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,3 +27,5 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re
+
+# docker stop $(docker ps -qa); docker rm $(docker ps -qa); docker rmi -f $(docker images -qa); docker volume rm $(docker volume ls -q); docker network rm $(docker network ls -q) 2>/dev/null
